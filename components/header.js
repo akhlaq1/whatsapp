@@ -50,11 +50,12 @@ const style = StyleSheet.create({
     },
     whatsappText:{
         fontFamily:"Roboto",
-        fontSize:Dimensions.get('window').width * 0.05,
+        fontSize:Dimensions.get('window').height * 0.04,
         fontWeight:"bold",
         color:"white",
         marginLeft:Dimensions.get('window').width * 0.04,
         marginTop:Dimensions.get('window').height * 0.02,
+        height:"100%"
     },
     searchImage:{
         marginLeft:Dimensions.get('window').width * 0.5,
@@ -76,7 +77,7 @@ cameraImage:{
 },
 chatsText:{
     fontFamily:"Roboto",
-    fontSize:Dimensions.get('window').width * 0.037,
+    fontSize:Dimensions.get('window').height * 0.025,
     fontWeight:"bold",
     color:"#cccccc",
     marginTop:Dimensions.get('window').height * 0.023,
@@ -84,7 +85,7 @@ chatsText:{
 },
 chatsStatus:{
     fontFamily:"Roboto",
-    fontSize:Dimensions.get('window').width * 0.037,
+    fontSize:Dimensions.get('window').height * 0.025,
     fontWeight:"bold",
     color:"#cccccc",
     marginTop:Dimensions.get('window').height * 0.023,
