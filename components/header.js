@@ -47,6 +47,7 @@ const style = StyleSheet.create({
         width:Dimensions.get('window').width,
         flex:0.5,
         flexDirection: 'row',
+        width:"100%"
     },
     whatsappText:{
         fontFamily:"Roboto",
@@ -67,7 +68,7 @@ const style = StyleSheet.create({
     marginTop:Dimensions.get('window').height * 0.025,
     width:Dimensions.get('window').width * 0.05,
     height:Dimensions.get('window').height * 0.04,
-    marginLeft:Dimensions.get('window').width * 0.07,
+    marginLeft:Dimensions.get('window').width * 0.03,
 },
 cameraImage:{
     width:Dimensions.get('window').width * 0.05,
