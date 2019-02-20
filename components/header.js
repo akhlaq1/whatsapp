@@ -1,12 +1,54 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,Dimensions, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet,Dimensions, Image, TouchableOpacity,Alert } from 'react-native';
 import Search from '../Assets/icons/search.png'
 import Dots from '../Assets/icons/dots.png'
-import Camera from '../Assets/icons/camera.png'
+import Camera from '../Assets/icons/camera.png';
+import Body from './body';
+import Status from './status';
+import Calls from './calls';
+import { Container, Header, Tab, Tabs, TabHeading, Icon,Toast} from 'native-base';
+import { Button, Paragraph, Dialog, Portal,Provider } from 'react-native-paper';
 
-export default class Header extends Component {
+
+class AlertView extends Component {
+  state = {
+    visible: true,
+  };
+
+  showDialog = () => this.setState({ 
+    visible: true
+   });
+
+  hideDialog = () => this.setState({
+     visible: false 
+    });
+
   render() {
     return (
+      <Provider>
+      <View>
+      <Portal>
+      <Dialog
+         visible={this.state.visible}
+         onDismiss={this._hideDialog}>
+        <Dialog.Title>Alert</Dialog.Title>
+        <Dialog.Content>
+          <Paragraph>There is no camera in emulator</Paragraph>
+        </Dialog.Content>
+        <Dialog.Actions>
+        </Dialog.Actions>
+      </Dialog>
+    </Portal>
+    </View>
+    </Provider>
+      );
+    }
+  }
+  
+export default class TopHeader extends Component {
+  render() {
+    return (
+      <Container>
       <View style={style.container}>
         <View style={style.insideViewOne}>
         <Text style={style.whatsappText}>WhatsApp</Text>
@@ -17,25 +59,28 @@ export default class Header extends Component {
         <Image style={style.menuDots} source={Dots} />
         </TouchableOpacity>
         </View>
-
-        <View style={style.insideViewOne}>
-        <TouchableOpacity>
-        <Image style={style.cameraImage} source={Camera}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={style.chatsText}>CHATS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={style.chatsStatus}>STATUS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={style.chatsStatus}>CALLS</Text>
-        </TouchableOpacity>
-        </View>
       </View>
+      
+      <Tabs page={1} >
+      <Tab tabStyle={{width:10}} heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Icon name="camera"/></TabHeading>}>
+          <AlertView />
+        </Tab>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>CHATS</Text></TabHeading>}>
+          <Body />
+        </Tab>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>STATUS</Text></TabHeading>}>
+          <Status />
+        </Tab>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>CALLS</Text></TabHeading>}>
+          <Calls />
+        </Tab>
+      </Tabs>
+
+    </Container>
     );
   }
 }
+
 
 const style = StyleSheet.create({
     container:{
@@ -93,3 +138,4 @@ chatsStatus:{
     marginLeft:Dimensions.get('window').width * 0.15,
 }
 })
+

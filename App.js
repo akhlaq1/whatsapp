@@ -9,16 +9,13 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Header from './components/header'
+import TopHeader from './components/header'
 import Body from './components/body'
 
 export default class App extends Component{
   render() {
     return (
-      <View style={{flex:1}}>
-        <Header />
-        <Body />
-      </View>
+        <TopHeader />
     );
   }
 }
