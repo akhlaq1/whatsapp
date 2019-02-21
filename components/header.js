@@ -61,17 +61,17 @@ export default class TopHeader extends Component {
         </View>
       </View>
       
-      <Tabs page={1} >
+      <Tabs page={1} style={{marginTop:-20}}>
       <Tab tabStyle={{width:10}} heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Icon name="camera"/></TabHeading>}>
           <AlertView />
         </Tab>
-        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>CHATS</Text></TabHeading>}>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold",color:"white"}}>CHATS</Text></TabHeading>}>
           <Body />
         </Tab>
-        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>STATUS</Text></TabHeading>}>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold",color:"white"}}>STATUS</Text></TabHeading>}>
           <Status />
         </Tab>
-        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold"}}>CALLS</Text></TabHeading>}>
+        <Tab heading={ <TabHeading style={{backgroundColor: "#075E55",}}><Text style={{fontWeight:"bold",color:"white"}}>CALLS</Text></TabHeading>}>
           <Calls />
         </Tab>
       </Tabs>
@@ -86,7 +86,7 @@ const style = StyleSheet.create({
     container:{
         width:Dimensions.get('window').width,
         backgroundColor: '#075E55',
-        flex:0.15
+        flex:0.12
     },
     insideViewOne:{
         width:Dimensions.get('window').width,
